@@ -1,0 +1,276 @@
+#Setup Min
+Setup
+Main Preferences
+AVP2 Directory:
+Primal Hunt Directory:
+Port (set 0 for auto-select):
+Language / Язык:
+Interface Preferences
+Featured Tab Font Color:
+Master Server Tab Font Color:
+Favorites Tab Font Color:
+Tab Position - Top
+Automatic Refresh
+Autosort by Players
+Hide News
+Chat Options
+Nickname:
+Auto Connect
+Check Nickname
+Server List Column Preferences
+Save
+Cancel
+Your nickname is valid!
+Your nickname is invalid! (length should be more than 5 and less than 16 symbols, only letters, numbers, minus and underscore are available)
+Please specify correct UDP local port! Use integer value, for example 1000, 27700, 5256 and etc.
+Please specify correct TCP local port! Use integer value, for example 1000, 27700, 5256 and etc.
+Please set AVP2 directory!
+" is not AVP2 directory. Please select correct directory!
+" is not Primal Hunt directory. Please select correct directory!
+#Setup Max
+#Server Info Min
+Server Info
+Parameter
+Value
+Close
+#Server Info Max
+#Server Advanced Options Min
+Server Advanced Options
+Server Advanced Options (Mark Server As Favorite)
+Server Advanced Options (Add Favorite Server)
+Server Advanced Options (Edit Favorite Server)
+Address:
+Port:
+Mod Autodetection
+User Comment:
+Advanced Options:
+Option
+Description
+Use Custom Command Line:
+Save
+Cancel
+This server is already added to favorites!
+#Server Advanced Options Max
+#Main menu Min
+AVP2 Community Canon Launcher
+Launcher
+Show News
+Hide Window
+Exit
+Server List
+Refresh All
+Add
+Advanced Options
+Delete
+Toggle Favorite
+Client Chat
+Login
+Logout
+Show Balloons
+Play Sounds (All)
+Play Sounds (Except My Messages)
+Setup
+Show
+Help
+About
+Featured
+Master Server
+Favorites
+Refresh All
+Server Name
+Ping
+Players
+Mod
+Type
+Map
+Address
+User Comment
+Add
+Advanced Options
+Delete
+Toggle Favorite
+Quick Info
+Map Screenshot
+Selected Server
+^Mod: N/A^^Game Type: N/A^^Players: 0/0^^Map: N/A
+^Mod: %s^^Game Type: %s^^Players: %s^^Map: %s
+^Mod: *%s^^Game Type: %s^^Players: %s^^Map: %s
+Ping: N/A
+Ping: ~
+Refresh
+Join Game
+Hide Window
+Server Info
+Player
+Ping
+Race
+Score
+Fast Options
+Fast Options [Favorite Server]
+Join Password:
+Save Options
+Reset Options
+Mod Manager
+Launch
+Add
+Edit
+Delete
+Show Info
+AVP2 Community Canon Launcher
+Show/Hide
+Exit
+Mod
+Description
+Launch
+Fast Options
+Save Options
+Reset Options
+Client Chat
+Send
+server is not responding
+Server "%s" is already marked as favorite!
+Do you want to remove server "%s" from favorites?
+Please select server!
+Server Address: 
+ERROR: No additional info
+Featured server list is not available!
+"%s" server list is empty!
+Can't load "%s" list (%s)
+Featured
+Master Server
+Favorites
+Can't fetch data from the server, check your internet connection! Application will be closed.
+Error while compiling online scripts!
+Please set AVP2 directory!
+New version of AVP2 Community Canon Launcher found! Do you want to update?
+You can add server only to Favorites!
+You can delete server only from Favorites!
+You can edit advanced options only for favorite servers!
+Information is not available for custom mods!
+Please select mod!
+Error while parsing commandline!
+Do you want to remove custom mod "%s"
+You can delete only custom mod!
+Option "%s" is required for playing on this server!
+#Main Menu Max
+#About Min
+About...
+OK
+#About Max
+#Loading Min
+Loading...
+Downloading data from the server
+Config - 
+Script - 
+Config - please wait...
+Script - please wait...
+Config - Success
+Script - Success
+#Loading Max
+#ModInfo Min
+MyMod Info
+Mod Info - 
+Where to download?
+Visit this web-page
+Close
+Not yet available, sorry.
+#ModInfo Max
+#ModOptions Min
+Edit Mod
+Edit Mod - 
+Add New Custom Mod
+Mod Name:
+Mod Description:
+Use Custom Command Line
+Primal Hunt Based Mod
+OK
+Cancel
+Mod with this name already exists!
+New Custom Mod
+Enter Description
+Enter Command Line
+#ModOptions Max
+#Downloader Min
+Downloader
+Downloader - Updating Launcher
+Task
+Status
+Cancel
+Application will be closed and updater will be started!
+Error while downloading update: 
+Downloading archive
+Unpacking archive
+Wait
+Not Started
+Done
+#Downloader Max
+#News Min
+AVP2 Community News
+Visit news web-page
+#News Max
+#Updater Min
+Applying update, please wait...
+Launcher process is still running!
+Something went wrong, update failed!
+Error during copying new files, update failed!
+You can now restart the CanonLauncher!
+#Updater Max
+#0030 Min
+IRC Chat
+Restart
+Zoom In
+Zoom Out
+IRC Chat
+Unlimited Resize
+Disable Chat
+IRC Chat Options
+Nickname:
+Unlimited resize option change will take effect after application restart!
+Unload from Memory
+#0030 Max
+#0031 Min
+Can't fetch data from the server, check your internet connection! Application will be running in offline mode.
+#0031 Max
+#0032 Min
+Information
+Close
+Copy to Clipboard
+Copied to clipboard!
+Please wait...
+Success
+Do you want to install D3D7Fix wrapper for AVP2 (improves game performance)? You can install/uninstall wrapper later via Setup menu.
+Download D3D7Fix (external link)
+Uninstall D3D7Fix
+D3D7Fix installation successful!
+Error during D3D7Fix installation: 
+D3D7Fix uninstalled!
+Close
+Ask about D3D7Fix
+#0032 Max
+Fast Options have been saved! "Use Password" and "Windowed Mode" options will be ignored.
+Fast Options have been reset!
+Advanced Options for D3D7Fix
+Advanced Options for D3D7Fix %s (global if saved, pay attention to version)
+Save
+Cancel
+Parameter
+Description
+Type
+Value
+Set
+Default
+Game directory path contains Unicode characters!
+Patching process - 
+Patching
+Patch Validation
+Finalizing
+Failed
+Error while extracting archive: 
+Error while patching: 
+Error during patch validation: 
+Remove Patches
+Patches removed for: 
+Patches are not available for custom mods!
+Incompatible D3D7Fix version %s is installed, please update to version %s!
+In progress
+#0040 Max

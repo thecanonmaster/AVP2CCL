@@ -1,0 +1,47 @@
+object frmMainUpdater: TfrmMainUpdater
+  Left = 451
+  Height = 63
+  Top = 560
+  Width = 401
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'AVP2 Canon Launcher Updater'
+  ClientHeight = 63
+  ClientWidth = 401
+  DesignTimePPI = 120
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clBlack
+  Font.Height = -15
+  Font.Name = 'Segoe UI'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '2.2.6.0'
+  object lblInfo: TLabel
+    Left = 30
+    Height = 20
+    Top = 20
+    Width = 340
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Applying update, please wait...'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clNavy
+    Font.Height = -15
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object tmrCooldown: TTimer
+    Enabled = False
+    Interval = 2000
+    OnTimer = tmrCooldownTimer
+    Left = 360
+    Top = 20
+  end
+end

@@ -1,0 +1,31 @@
+object frmImagePreview: TfrmImagePreview
+  Left = 516
+  Height = 584
+  Top = 205
+  Width = 676
+  BorderStyle = bsDialog
+  Caption = 'Map Screenshot'
+  ClientHeight = 584
+  ClientWidth = 676
+  DesignTimePPI = 120
+  ParentFont = True
+  Position = poMainFormCenter
+  LCLVersion = '2.0.10.0'
+  object imgMapshot: TImage
+    Left = 8
+    Height = 528
+    Top = 8
+    Width = 660
+    AntialiasingMode = amOn
+    Stretch = True
+  end
+  object btnClose: TButton
+    Left = 567
+    Height = 34
+    Top = 544
+    Width = 101
+    Caption = 'Close'
+    OnClick = btnCloseClick
+    TabOrder = 0
+  end
+end

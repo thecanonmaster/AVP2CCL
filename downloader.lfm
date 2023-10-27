@@ -1,0 +1,54 @@
+object frmDownloader: TfrmDownloader
+  Left = 1660
+  Height = 247
+  Top = 454
+  Width = 580
+  BorderIcons = []
+  BorderStyle = bsDialog
+  Caption = 'Downloader - Title'
+  ClientHeight = 247
+  ClientWidth = 580
+  DesignTimePPI = 120
+  OnClose = FormClose
+  ParentFont = True
+  Position = poMainFormCenter
+  LCLVersion = '2.2.6.0'
+  object lvJobs: TListView
+    Left = 10
+    Height = 190
+    Top = 10
+    Width = 558
+    AutoSort = False
+    AutoWidthLastColumn = True
+    Columns = <    
+      item
+        AutoSize = True
+        Caption = 'Job'
+        Width = 43
+      end    
+      item
+        Caption = 'Status'
+        Width = 300
+      end>
+    ReadOnly = True
+    RowSelect = True
+    SmallImages = frmMain.ilAll
+    TabOrder = 0
+    ViewStyle = vsReport
+  end
+  object btnCancel: TButton
+    Left = 470
+    Height = 31
+    Top = 208
+    Width = 100
+    Caption = 'Cancel'
+    OnClick = btnCancelClick
+    TabOrder = 1
+  end
+  object tmrRunner: TTimer
+    Enabled = False
+    OnTimer = tmrRunnerTimer
+    Left = 510
+    Top = 70
+  end
+end

@@ -1,0 +1,171 @@
+object frmAO: TfrmAO
+  Left = 1084
+  Height = 674
+  Top = 173
+  Width = 514
+  BorderStyle = bsDialog
+  Caption = 'Server Advanced Options'
+  ClientHeight = 674
+  ClientWidth = 514
+  DesignTimePPI = 120
+  ParentFont = True
+  Position = poMainFormCenter
+  LCLVersion = '2.2.6.0'
+  object btnSave: TButton
+    Left = 90
+    Height = 31
+    Top = 630
+    Width = 110
+    Caption = 'Save'
+    OnClick = btnSaveClick
+    TabOrder = 1
+  end
+  object btnCancel: TButton
+    Left = 310
+    Height = 31
+    Top = 630
+    Width = 110
+    Caption = 'Cancel'
+    OnClick = btnCancelClick
+    TabOrder = 2
+  end
+  object gbxAO: TGroupBox
+    Left = 10
+    Height = 600
+    Top = 10
+    Width = 491
+    ClientHeight = 575
+    ClientWidth = 487
+    TabOrder = 0
+    object mmoCustomCmd: TMemo
+      Left = 20
+      Height = 192
+      Top = 368
+      Width = 450
+      Color = clBtnFace
+      Enabled = False
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -17
+      Font.Name = 'Courier New'
+      Font.Pitch = fpFixed
+      Font.Quality = fqDraft
+      ParentFont = False
+      ScrollBars = ssAutoBoth
+      TabOrder = 7
+    end
+    object lvAOS: TListView
+      Left = 20
+      Height = 186
+      Top = 150
+      Width = 450
+      AutoSort = False
+      AutoWidthLastColumn = True
+      Checkboxes = True
+      Columns = <      
+        item
+          AutoSize = True
+          Caption = 'Option'
+          Width = 66
+        end      
+        item
+          Caption = 'Description'
+          Width = 380
+        end>
+      ReadOnly = True
+      RowSelect = True
+      TabOrder = 5
+      ViewStyle = vsReport
+      OnChange = lvAOSChange
+    end
+    object lblAdvancedOptions: TLabel
+      Left = 20
+      Height = 20
+      Top = 130
+      Width = 125
+      Caption = 'Advanced Options:'
+      ParentColor = False
+    end
+    object cbxMod: TComboBox
+      Left = 230
+      Height = 28
+      Top = 30
+      Width = 240
+      Color = clBtnFace
+      Enabled = False
+      ItemHeight = 20
+      OnChange = cbxModChange
+      Style = csDropDownList
+      TabOrder = 2
+    end
+    object cbxCustomCmd: TCheckBox
+      Left = 20
+      Height = 24
+      Top = 344
+      Width = 209
+      Caption = 'Use Custom Command Line:'
+      OnChange = cbxCustomCmdChange
+      TabOrder = 6
+    end
+    object edtComment: TEdit
+      Left = 230
+      Height = 28
+      Top = 90
+      Width = 240
+      TabOrder = 4
+    end
+    object lblUserComment: TLabel
+      Left = 230
+      Height = 17
+      Top = 70
+      Width = 97
+      Caption = 'User Comment:'
+      Font.Height = -14
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object edtIP: TEdit
+      Left = 20
+      Height = 28
+      Top = 30
+      Width = 190
+      OnChange = edtIPChange
+      TabOrder = 0
+    end
+    object lblIP: TLabel
+      Left = 20
+      Height = 20
+      Top = 10
+      Width = 56
+      Caption = 'Address:'
+      ParentColor = False
+    end
+    object edtPort: TEdit
+      Left = 20
+      Height = 28
+      Top = 90
+      Width = 190
+      TabOrder = 3
+    end
+    object lblPort: TLabel
+      Left = 21
+      Height = 20
+      Top = 70
+      Width = 29
+      Caption = 'Port:'
+      ParentColor = False
+    end
+    object cbxCustomMod: TCheckBox
+      Left = 230
+      Height = 24
+      Top = 5
+      Width = 154
+      Caption = 'Mod Autodetection'
+      Checked = True
+      OnChange = cbxCustomModChange
+      State = cbChecked
+      TabOrder = 1
+    end
+  end
+end

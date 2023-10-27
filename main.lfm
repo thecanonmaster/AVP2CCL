@@ -1,0 +1,753 @@
+object frmMain: TfrmMain
+  Left = 338
+  Height = 964
+  Top = 115
+  Width = 1190
+  Anchors = [akRight, akBottom]
+  Caption = 'AVP2 Community Canon Launcher'
+  ClientHeight = 964
+  ClientWidth = 1190
+  DesignTimePPI = 120
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clBlack
+  Font.Height = -15
+  Font.Name = 'Segoe UI'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.2.6.0'
+  object sbSimple: TStatusBar
+    Left = 0
+    Height = 35
+    Top = 929
+    Width = 1190
+    AutoSize = False
+    Panels = <    
+      item
+        Text = '0.0.0.0'
+        Width = 65
+      end    
+      item
+        Text = 'RC00'
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object gbSelected: TGroupBox
+    Left = 894
+    Height = 919
+    Top = 0
+    Width = 286
+    Anchors = [akTop, akRight, akBottom]
+    ClientHeight = 894
+    ClientWidth = 282
+    TabOrder = 6
+    object gbMapshot: TGroupBox
+      Left = 16
+      Height = 220
+      Top = 0
+      Width = 250
+      Caption = 'Map Screenshot'
+      ClientHeight = 195
+      ClientWidth = 246
+      TabOrder = 0
+      object imgMapshot: TImage
+        Cursor = crHandPoint
+        Left = 12
+        Height = 176
+        Top = 10
+        Width = 220
+        AntialiasingMode = amOn
+        OnClick = imgMapshotClick
+        Stretch = True
+      end
+    end
+    object lblServer: TLabel
+      Cursor = crHandPoint
+      Left = 16
+      Height = 80
+      Top = 240
+      Width = 250
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Selected Server'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clNavy
+      Font.Height = -17
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold, fsUnderline]
+      ParentColor = False
+      ParentFont = False
+      WordWrap = True
+      OnClick = lblServerClick
+    end
+    object lblInfo: TLabel
+      Left = 16
+      Height = 110
+      Top = 340
+      Width = 250
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Mod: N/A'#13#10'Game Type: N/A'#13#10'Players: 0/0'#13#10'Map: N/A'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      WordWrap = True
+    end
+    object btnJoin: TButton
+      Left = 56
+      Height = 50
+      Top = 702
+      Width = 169
+      Anchors = [akLeft, akBottom]
+      Caption = 'Join Game'
+      OnClick = btnJoinClick
+      TabOrder = 2
+    end
+    object btnRefresh: TButton
+      Left = 56
+      Height = 50
+      Top = 642
+      Width = 169
+      Anchors = [akLeft, akBottom]
+      Caption = 'Refresh'
+      OnClick = btnRefreshClick
+      TabOrder = 1
+    end
+    object btnHide: TButton
+      Left = 56
+      Height = 31
+      Top = 762
+      Width = 169
+      Anchors = [akLeft, akBottom]
+      Caption = 'Hide Window'
+      OnClick = btnHideClick
+      TabOrder = 3
+    end
+    object lblPing: TLabel
+      Left = 16
+      Height = 30
+      Top = 460
+      Width = 250
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Ping: N/A'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      WordWrap = True
+    end
+  end
+  object lvServers: TListView
+    AnchorSideBottom.Control = splMain
+    Left = 10
+    Height = 428
+    Top = 48
+    Width = 878
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    AutoSort = False
+    Columns = <    
+      item
+        AutoSize = True
+        Caption = 'Server Name'
+        Width = 105
+      end    
+      item
+        Caption = 'Ping'
+        Width = 48
+      end    
+      item
+        Caption = 'Players'
+        Width = 63
+      end    
+      item
+        AutoSize = True
+        Caption = 'Mod'
+        Width = 51
+      end    
+      item
+        AutoSize = True
+        Caption = 'Type'
+        Width = 52
+      end    
+      item
+        AutoSize = True
+        Caption = 'Map'
+      end    
+      item
+        AutoSize = True
+        Caption = 'Address'
+        Width = 73
+      end    
+      item
+        AutoSize = True
+        Caption = 'User Comment'
+        Width = 118
+      end>
+    HideSelection = False
+    PopupMenu = ppmServers
+    ReadOnly = True
+    RowSelect = True
+    ScrollBars = ssAutoBoth
+    SmallImages = ilAll
+    TabOrder = 4
+    ViewStyle = vsReport
+    OnClick = lvServersClick
+    OnColumnClick = lvServersColumnClick
+    OnCompare = lvServersCompare
+    OnSelectItem = lvServersSelectItem
+  end
+  object btnFeatured: TButton
+    Left = 10
+    Height = 31
+    Top = 10
+    Width = 160
+    Caption = 'Launcher'
+    Enabled = False
+    OnClick = btnFeaturedClick
+    TabOrder = 0
+  end
+  object btnMasterServer: TButton
+    Left = 180
+    Height = 31
+    Top = 10
+    Width = 160
+    Caption = 'Master Server'
+    Enabled = False
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = btnMasterServerClick
+    ParentFont = False
+    TabOrder = 1
+  end
+  object btnFavorites: TButton
+    Left = 350
+    Height = 31
+    Top = 10
+    Width = 160
+    Caption = 'Favorites'
+    Enabled = False
+    OnClick = btnFavoritesClick
+    TabOrder = 2
+  end
+  object btnRefreshAll: TButton
+    Left = 520
+    Height = 31
+    Top = 10
+    Width = 160
+    Caption = 'Refresh All'
+    Enabled = False
+    OnClick = btnRefreshAllClick
+    TabOrder = 3
+  end
+  object pcMain: TPageControl
+    AnchorSideTop.Control = splMain
+    AnchorSideTop.Side = asrBottom
+    Left = 8
+    Height = 438
+    Top = 486
+    Width = 880
+    ActivePage = tsServerInfo
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ParentShowHint = False
+    TabIndex = 0
+    TabOrder = 7
+    TabPosition = tpBottom
+    object tsServerInfo: TTabSheet
+      Caption = 'Server Info'
+      ClientHeight = 405
+      ClientWidth = 872
+      object lvPlayers: TListView
+        Left = 10
+        Height = 377
+        Top = 10
+        Width = 622
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        AutoSort = False
+        Columns = <>
+        ReadOnly = True
+        RowSelect = True
+        SmallImages = ilAll
+        TabOrder = 0
+        ViewStyle = vsReport
+      end
+      object btnOptions: TButton
+        Left = 642
+        Height = 40
+        Top = 347
+        Width = 102
+        Anchors = [akRight, akBottom]
+        Caption = 'Save Options'
+        Enabled = False
+        OnClick = btnOptionsClick
+        TabOrder = 3
+      end
+      object cgrpFastOptions: TCheckGroup
+        Left = 642
+        Height = 267
+        Top = 10
+        Width = 220
+        Anchors = [akTop, akRight, akBottom]
+        AutoFill = True
+        Caption = 'Fast Options'
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.TopBottomSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 1
+        Enabled = False
+        OnItemClick = cgrpFastOptionsItemClick
+        TabOrder = 1
+      end
+      object edtJoinPassword: TEdit
+        Left = 642
+        Height = 28
+        Top = 306
+        Width = 220
+        Anchors = [akRight, akBottom]
+        TabOrder = 2
+        Visible = False
+      end
+      object lblJoinPassword: TLabel
+        Left = 642
+        Height = 16
+        Top = 285
+        Width = 220
+        Anchors = [akRight, akBottom]
+        AutoSize = False
+        Caption = 'Join Password:'
+        ParentColor = False
+        Visible = False
+      end
+      object btnReset: TButton
+        Left = 760
+        Height = 40
+        Top = 347
+        Width = 102
+        Anchors = [akRight, akBottom]
+        Caption = 'Reset Options'
+        Enabled = False
+        OnClick = btnResetClick
+        TabOrder = 4
+      end
+    end
+    object tsModMgr: TTabSheet
+      Caption = 'Mod Manager'
+      ClientHeight = 405
+      ClientWidth = 872
+      object lvMods: TListView
+        Left = 10
+        Height = 377
+        Top = 10
+        Width = 622
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        AutoSort = False
+        AutoWidthLastColumn = True
+        Columns = <        
+          item
+            AutoSize = True
+            Caption = 'Mod'
+            Width = 51
+          end        
+          item
+            Caption = 'Description'
+            Width = 567
+          end>
+        HideSelection = False
+        PopupMenu = ppmMods
+        ReadOnly = True
+        RowSelect = True
+        SmallImages = ilAll
+        TabOrder = 0
+        ViewStyle = vsReport
+        OnSelectItem = lvModsSelectItem
+      end
+      object btnLaunchMod: TButton
+        Left = 672
+        Height = 40
+        Top = 10
+        Width = 160
+        Anchors = [akTop, akRight]
+        Caption = 'Launch'
+        OnClick = btnLaunchModClick
+        TabOrder = 1
+      end
+      object cgrpFastOptionsMM: TCheckGroup
+        Left = 642
+        Height = 267
+        Top = 60
+        Width = 220
+        Anchors = [akTop, akRight, akBottom]
+        AutoFill = True
+        Caption = 'Fast Options'
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.TopBottomSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 1
+        OnItemClick = cgrpFastOptionsMMItemClick
+        TabOrder = 2
+      end
+      object btnResetMM: TButton
+        Left = 760
+        Height = 40
+        Top = 347
+        Width = 102
+        Anchors = [akRight, akBottom]
+        Caption = 'Reset Options'
+        OnClick = btnResetMMClick
+        TabOrder = 4
+      end
+      object btnOptionsMM: TButton
+        Left = 642
+        Height = 40
+        Top = 347
+        Width = 102
+        Anchors = [akRight, akBottom]
+        Caption = 'Save Options'
+        OnClick = btnOptionsMMClick
+        TabOrder = 3
+      end
+    end
+  end
+  object splMain: TSplitter
+    AnchorSideTop.Control = lvServers
+    Cursor = crVSplit
+    Left = 0
+    Height = 10
+    Top = 476
+    Width = 900
+    Align = alNone
+    Anchors = [akLeft, akRight]
+    Color = clBtnFace
+    ParentColor = False
+    ResizeAnchor = akTop
+    ResizeStyle = rsLine
+  end
+  object mmMenu: TMainMenu
+    Left = 579
+    Top = 120
+    object mmiLauncher: TMenuItem
+      Caption = 'Launcher'
+      object mmiNews: TMenuItem
+        Caption = 'Show News'
+        OnClick = mmiNewsClick
+      end
+      object mmiHide: TMenuItem
+        Caption = 'Hide Window'
+        OnClick = mmiHideClick
+      end
+      object mmiSeparator: TMenuItem
+        Caption = '-'
+      end
+      object mmiExit: TMenuItem
+        Caption = 'Exit'
+        OnClick = mmiExitClick
+      end
+    end
+    object mmiServerList: TMenuItem
+      Caption = 'Server List'
+      object mmiRefreshAll: TMenuItem
+        Caption = 'Refresh All'
+        OnClick = mmiRefreshAllClick
+      end
+      object mmiRefreshOnClick: TMenuItem
+        Caption = 'Refresh On Click'
+        Checked = True
+        Visible = False
+        OnClick = mmiRefreshOnClickClick
+      end
+      object mmiSeparator1: TMenuItem
+        Caption = '-'
+      end
+      object mmiAdd: TMenuItem
+        Caption = 'Add'
+        Enabled = False
+        ShortCut = 16449
+        OnClick = mmiAddClick
+      end
+      object mmiEdit: TMenuItem
+        Caption = 'Advanced Options'
+        ShortCut = 16453
+        OnClick = mmiEditClick
+      end
+      object mmiDelete: TMenuItem
+        Caption = 'Delete'
+        Enabled = False
+        ShortCut = 16452
+        OnClick = mmiDeleteClick
+      end
+      object mmiMarkFavorite: TMenuItem
+        Caption = 'Toggle Favorite'
+        ShortCut = 16454
+        OnClick = mmiMarkFavoriteClick
+      end
+    end
+    object mmiSetup: TMenuItem
+      Caption = 'Setup'
+      object mmiShow: TMenuItem
+        Caption = 'Show'
+        OnClick = mmiShowClick
+      end
+      object mmiSeparator5: TMenuItem
+        Caption = '-'
+      end
+      object mmiD3D7Fix: TMenuItem
+        Caption = 'Install/Uninstall D3D7Fix'
+        OnClick = mmiD3D7FixClick
+      end
+      object mmiD3D7FixAO: TMenuItem
+        Caption = 'Advanced Options for D3D7Fix'
+        OnClick = mmiD3D7FixAOClick
+      end
+    end
+    object mmiHelp: TMenuItem
+      Caption = 'Help'
+      object mmiAbout: TMenuItem
+        Caption = 'About'
+        OnClick = mmiAboutClick
+      end
+      object mmiDebugMsg: TMenuItem
+        Caption = 'Debug Messages'
+        Visible = False
+        OnClick = mmiDebugMsgClick
+      end
+    end
+  end
+  object tiMain: TTrayIcon
+    BalloonFlags = bfInfo
+    BalloonTimeout = 2000
+    BalloonTitle = 'AVP2 Canon Launcher'
+    PopUpMenu = ppmTray
+    Icon.Data = {
+      2E0B000000000100030010100000000000002801000036000000101000000000
+      0000680500005E010000101000000000000068040000C6060000280000001000
+      0000200000000100040000000000800000000000000000000000000000000000
+      000000000000800000000080000080800000000080008000800000808000C0C0
+      C00080808000FF00000000FF0000FFFF00000000FF00FF00FF0000FFFF00FFFF
+      FF00000000606040000000044640000000000046666646040000046666440040
+      0000066664664604240046E666646464000066C6EEE664666400666E86666660
+      6600667E4E466646046046666664646424200466664606004000066664644040
+      0000004666642420400000046642404000000000406424000000000000000000
+      0000F0070000E0030000C0010000800000008000000000000000000000000000
+      000000000000000000008000000080000000C0010000E0030000F0070000FC1F
+      0000280000001000000020000000010008000000000000010000000000000000
+      0000000000000000000000000000000C1200000C1300000D14000B1317000010
+      190000111A0000121B0000121C0000141F0008171E0000142000001521000016
+      2200001723000018250000192700091C2600001A2800001B2900001B2A00001E
+      2E00001E2F00101E2600141F2500001F30001020280000203100012031000020
+      3200002132000022340000223500002336000325380000253A0000263B000027
+      3C0000273D0000283D0000283E000B28380013293400212B3100202F37002233
+      3C002D353A0000294000002A4100002A4200002B4300002C4400002D4600092F
+      4400002E4800002F490000304A0000324D000034500000345100003653000036
+      54000037550000375600003856000E3C550000395800003A5A00003B5B00003D
+      5F00003E5F002B3E4900254A5F00004062000740600000416400004367000043
+      68000044690001466B0000466C0000476E0004496E000048700000497000004A
+      7200004B7300004B7400004C7600004F7A0000507C0009527A000F557A001854
+      750059666E004C6B7C006E777D00005380000054810000558300005584000057
+      86000058880004598800075A8800005C8E00005C8F00005D8F00005E9100035F
+      9100006297000B6495000C6494000063990000649B0000659B0000659C000366
+      9C001E6A93000068A0000069A200006CA700086BA100126FA2000A73AC001871
+      A2001A75A6001C7BAF000072B1000174B4000177B7000377B7000177B8000079
+      BB00007ABD000A7CBB00117BB4001E7DB100007CC0001781BB007F898F006E84
+      91007E8A93005187A5005C92B0000082C9000383C9000083CB000386CD00008B
+      D6000090DE000096E8000C9FF00005A1F6001DAFFE0024A1E50036AAE90035B7
+      FD004CBBF8008D9CA500829DAC00949FA60095A0A70095A4AD0098A6AE0081A1
+      B4008DADBF0095AFBF0098ACB9009DB2BF00A5B0B700A5B0B800A2B8C500ABB9
+      C200ABBCC700B2BDC500B6C0C800B6C1C900B7C3CB00B4C2CC00B9C4CC00B8C4
+      CD00BBC6CE00BCC7D000BFCAD200030A0D00531A807CE4000000000000C00000
+      000000000000020000008000000000000000A0198C0032884A00D06138000000
+      00C00000000094198C0002000000800000000000000074558C00ECF5A6000200
+      0000433A5C50726F6772616D2046696C6573090000006C616E645C4D7950726F
+      67735C70726F6A6563742D457846462D436F6E6E6563746F725C66696E616C5F
+      6F7200000000A081F3000088367E8ADF907C960E817CE4000000000000000000
+      0000000000001C198C00A081F3003600000000000000B60E817C36000000B819
+      8C00030000004000000036000000000000003600000008198C002A88367EC819
+      8C00D89A837CC00E817CFFFFFFFFB60E817CC9884A00E4000000A081F3003600
+      00006C198C000000000000000000B28D48352229478EB6000000000000A85D54
+      4B3A3024160E2CAB00000000A77A6E634E3E34301B100917AA0000B388857769
+      574236261E120B062BB600909583726C61513B3A312F1F15018CB78B96787B87
+      6D4F6B364C4D2605032EAC94917F9A9997655A586A6156200204A68A899D9B4A
+      929371735921555113B9A97E9E9C5C98528280663C6221504911B5767D706F68
+      67454B3D3F372832252D008F84817763534338271D120D08026000AE7C867969
+      584639281F140D0718B00000A5757464514438251E120C0AA200000000A05B58
+      4D403424190F1AA1000000000000AD5F4133231C2A5EAF000000000000000000
+      B1A39FA4B40000000000F0070000E0030000C001000080000000800000000000
+      0000000000000000000000000000000000008000000080000000C0010000E003
+      0000F0070000FC1F000028000000100000002000000001002000000000000004
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000024380A00253A6C002B43CD00273DF2002235FA001E2EEF001621C5000F
+      1856000A1005000000000000000000000000000000000000000000000000003A
+      5A34004368DE004970FF004164FF003450FF002A41FF00263BFF001E2FFF0017
+      23FF000F17D3000A102200000000000000000000000000000000004F7A370067
+      9FF4006297FF005583FF004469FF003755FF002D46FF002A41FF002031FF0019
+      27FF00141FFF000E16E900090E220000000000000000004A720E0073B1E70079
+      BBFF0068A0FF005C8EFF004B74FF003958FF002E48FF00273DFF002132FF001A
+      28FF001420FF00111AFF000A0FD200070A0500000000005D9083008BD6FF0377
+      B7FF00649BFF005E91FF005380FF00476EFF003451FF003450FF002A42FF0029
+      40FF002234FF001E2EFF000C12FF00070B5500476E040077B8DF0090DEFF0069
+      A2FF126FA2FF0A7CBBFF035F91FF01466BFF005D8FFF002E48FF004367FF0043
+      68FF00273DFF001019FF000D14FF00070BC200527F260085CDFA0082C9FF1C7B
+      AFFF1DAFFEFF05A1F6FF0096E8FF005786FF00507CFF004C76FF005C8FFF0053
+      80FF004B73FF002235FF000C13FF00070BEF005A8B42007CC0FF1E7DB1FF35B7
+      FDFF24A1E5FF074060FF0383C9FF0083CBFF006399FF00659BFF004F7AFF0023
+      36FF004A72FF00476EFF001B29FF00070AFA00456B2D1974A6FC4CBBF8FF36AA
+      E9FF0F557AFF0C9FF0FF04496EFF0177B7FF0072B1FF005888FF003653FF0054
+      81FF002336FF00466CFF004062FF00131DF200314C090F618EE91871A2FF0C64
+      94FF0B6495FF075A88FF045988FF003D5FFF004164FF003654FF003756FF002F
+      49FF00283EFF002B43FF00273CFF00121CD100000000015684930177B8FF0174
+      B4FF0068A0FF005583FF004870FF003A5AFF00304AFF00283DFF002032FF001A
+      28FF001622FF00121CFF000C13FF00070B6C0000000000486F1A006EAAF1007A
+      BDFF006CA7FF005C8EFF004C76FF003E5FFF00324DFF00283EFF002234FF001B
+      2AFF001622FF00121BFF000A10E300060A0C0000000000000000004D77520064
+      9BFA00659CFF005584FF00476EFF003B5BFF00304AFF00273CFF002132FF001A
+      28FF001521FF000F16F400080D3700000000000000000000000000000000003D
+      5D51004C76F2004C76FF004368FF003856FF002D46FF00263BFF001F30FF0018
+      25FF001019E9000B113900000000000000000000000000000000000000000000
+      000000283E1A002C449900304BEB002C44FE00253AFF001F30FD001723E50010
+      1888000C12110000000000000000000000000000000000000000000000000000
+      000000000000000000000019260C001D2C380019274200162233001119080000
+      000000000000000000000000000000000000F0070000E0030000C00100008000
+      0000800000000000000000000000000000000000000000000000800000008000
+      0000C0010000E0030000F0070000FC1F0000
+    }
+    OnClick = tiMainClick
+    Left = 579
+    Top = 180
+  end
+  object tmrRefresh: TTimer
+    Enabled = False
+    Interval = 1500
+    OnTimer = tmrRefreshTimer
+    Left = 580
+    Top = 250
+  end
+  object ilAll: TImageList
+    Left = 579
+    Top = 320
+    Bitmap = {
+      4C7A070000001000000010000000970000000000000078DAED99510A80300C43
+      3DFA6E5E07821461D290490DC447FD505E90BAA9CC38C27CC0DC2217E3A219EA
+      3EDB3F63FAE7FF1CB2A91817CD50F7D9FE19F38327C06302302E9AA1EEB3FD33
+      A679F68FB94BC5B86886BACFF6CF9876E2FA68BD8B71D10C759FED9F31EDEFFF
+      11B91817CD50F7D9FE19AF9F578E55DD6A463EBFBAFE55C69B5BC950F7D9FEED
+      B87F3BC68FDAFF8B131454A740
+    }
+  end
+  object ppmTray: TPopupMenu
+    Left = 579
+    Top = 390
+    object mmiTitle: TMenuItem
+      Caption = 'AVP2 Canon Launcher'
+      Default = True
+      Enabled = False
+    end
+    object mmiSeparator2: TMenuItem
+      Caption = '-'
+    end
+    object mmiTrayShow: TMenuItem
+      Caption = 'Show/Hide'
+      OnClick = mmiTrayShowClick
+    end
+    object mmiTrayExit: TMenuItem
+      Caption = 'Exit'
+      OnClick = mmiTrayExitClick
+    end
+  end
+  object ppmServers: TPopupMenu
+    Left = 579
+    Top = 460
+    object mmiPPMAdd: TMenuItem
+      Caption = 'Add'
+      Enabled = False
+      OnClick = mmiAddClick
+    end
+    object mmiPPMEdit: TMenuItem
+      Caption = 'Advanced Options'
+      OnClick = mmiEditClick
+    end
+    object mmiPPMDelete: TMenuItem
+      Caption = 'Delete'
+      Enabled = False
+      OnClick = mmiDeleteClick
+    end
+    object mmiPPMFavorite: TMenuItem
+      Caption = 'Toggle Favorite'
+      OnClick = mmiMarkFavoriteClick
+    end
+    object mmiPPMInfo: TMenuItem
+      Caption = 'Quick Info'
+      OnClick = mmiPPMInfoClick
+    end
+  end
+  object tmrUpdate: TTimer
+    Enabled = False
+    Interval = 33
+    OnTimer = tmrUpdateTimer
+    Left = 420
+    Top = 250
+  end
+  object tmrNews: TTimer
+    Enabled = False
+    Interval = 500
+    OnTimer = tmrNewsTimer
+    Left = 350
+    Top = 250
+  end
+  object ppmMods: TPopupMenu
+    Left = 579
+    Top = 528
+    object mmiLaunchMod: TMenuItem
+      Caption = 'Launch'
+      OnClick = btnLaunchModClick
+    end
+    object mmiAddMod: TMenuItem
+      Caption = 'Add'
+      OnClick = btnAddModClick
+    end
+    object mmiEditMod: TMenuItem
+      Caption = 'Edit'
+      OnClick = btnEditModClick
+    end
+    object mmiDeleteMod: TMenuItem
+      Caption = 'Delete'
+      OnClick = btnDeleteModClick
+    end
+    object mmiInfoMod: TMenuItem
+      Caption = 'Show Info'
+      OnClick = btnInfoModClick
+    end
+    object mmiRemoveModPatches: TMenuItem
+      Caption = 'Remove Patches'
+      OnClick = mmiRemoveModPatchesClick
+    end
+  end
+end

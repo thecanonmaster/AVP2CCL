@@ -1,0 +1,49 @@
+object frmDebug: TfrmDebug
+  Left = 523
+  Height = 472
+  Top = 356
+  Width = 680
+  BorderStyle = bsDialog
+  Caption = 'Information'
+  ClientHeight = 472
+  ClientWidth = 680
+  DesignTimePPI = 120
+  ParentFont = True
+  Position = poMainFormCenter
+  LCLVersion = '2.0.12.0'
+  object mmoDebug: TMemo
+    Left = 8
+    Height = 416
+    Top = 8
+    Width = 664
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -17
+    Font.Name = 'Courier New'
+    Font.Pitch = fpFixed
+    Font.Quality = fqDraft
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssBoth
+    TabOrder = 0
+    WordWrap = False
+  end
+  object btnClose: TButton
+    Left = 571
+    Height = 34
+    Top = 431
+    Width = 101
+    Caption = 'Close'
+    OnClick = btnCloseClick
+    TabOrder = 2
+  end
+  object btnCopyToClipboard: TButton
+    Left = 424
+    Height = 34
+    Top = 431
+    Width = 141
+    Caption = 'Copy to Clipboard'
+    OnClick = btnCopyToClipboardClick
+    TabOrder = 1
+  end
+end

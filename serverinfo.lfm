@@ -1,0 +1,57 @@
+object frmServerInfo: TfrmServerInfo
+  Left = 489
+  Height = 544
+  Top = 296
+  Width = 488
+  BorderStyle = bsDialog
+  Caption = 'Server info'
+  ClientHeight = 544
+  ClientWidth = 488
+  DesignTimePPI = 120
+  ParentFont = True
+  Position = poMainFormCenter
+  LCLVersion = '2.2.6.0'
+  object lvServerInfo: TListView
+    Left = 10
+    Height = 486
+    Top = 10
+    Width = 468
+    AutoSort = False
+    AutoWidthLastColumn = True
+    Columns = <    
+      item
+        AutoSize = True
+        Caption = 'Parameter'
+        Width = 88
+      end    
+      item
+        AutoSize = True
+        Caption = 'Value'
+        Width = 57
+      end>
+    HideSelection = False
+    PopupMenu = ppmItem
+    ReadOnly = True
+    RowSelect = True
+    TabOrder = 0
+    ViewStyle = vsReport
+  end
+  object btnClose: TButton
+    Left = 374
+    Height = 31
+    Top = 504
+    Width = 104
+    Caption = 'Close'
+    OnClick = btnCloseClick
+    TabOrder = 1
+  end
+  object ppmItem: TPopupMenu
+    OnPopup = ppmItemPopup
+    Left = 32
+    Top = 488
+    object mmiCopyValue: TMenuItem
+      Caption = 'Copy value to clipboard'
+      OnClick = mmiCopyValueClick
+    end
+  end
+end

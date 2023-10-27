@@ -1,0 +1,105 @@
+object frmD3D7FixAO: TfrmD3D7FixAO
+  Left = 430
+  Height = 528
+  Top = 189
+  Width = 888
+  BorderStyle = bsDialog
+  Caption = 'Advanced Options for D3D7Fix'
+  ClientHeight = 528
+  ClientWidth = 888
+  DesignTimePPI = 120
+  ParentFont = True
+  Position = poMainFormCenter
+  LCLVersion = '2.2.6.0'
+  object btnSave: TButton
+    Left = 656
+    Height = 31
+    Top = 488
+    Width = 110
+    Caption = 'Save'
+    OnClick = btnSaveClick
+    TabOrder = 4
+  end
+  object btnCancel: TButton
+    Left = 770
+    Height = 31
+    Top = 488
+    Width = 110
+    Caption = 'Cancel'
+    OnClick = btnCancelClick
+    TabOrder = 5
+  end
+  object lvD3D7FixAO: TListView
+    Left = 8
+    Height = 440
+    Top = 40
+    Width = 872
+    AutoSort = False
+    Checkboxes = True
+    Columns = <    
+      item
+        AutoSize = True
+        Caption = 'Parameter'
+        Width = 88
+      end    
+      item
+        AutoSize = True
+        Caption = 'Description'
+        Width = 96
+      end    
+      item
+        AutoSize = True
+        Caption = 'Type'
+        Width = 52
+      end    
+      item
+        AutoSize = True
+        Caption = 'Value'
+        Width = 57
+      end>
+    HideSelection = False
+    ReadOnly = True
+    RowSelect = True
+    TabOrder = 0
+    ViewStyle = vsReport
+    OnCustomDrawItem = lvD3D7FixAOCustomDrawItem
+    OnItemChecked = lvD3D7FixAOItemChecked
+    OnSelectItem = lvD3D7FixAOSelectItem
+  end
+  object edtValue: TEdit
+    Left = 8
+    Height = 28
+    Top = 488
+    Width = 216
+    Enabled = False
+    TabOrder = 1
+  end
+  object btnSetValue: TButton
+    Left = 232
+    Height = 31
+    Top = 488
+    Width = 80
+    Caption = 'Set'
+    Enabled = False
+    OnClick = btnSetValueClick
+    TabOrder = 2
+  end
+  object btnDefaultValue: TButton
+    Left = 320
+    Height = 31
+    Top = 488
+    Width = 80
+    Caption = 'Default'
+    Enabled = False
+    OnClick = btnDefaultValueClick
+    TabOrder = 3
+  end
+  object edtResult: TEdit
+    Left = 8
+    Height = 28
+    Top = 8
+    Width = 872
+    ReadOnly = True
+    TabOrder = 6
+  end
+end

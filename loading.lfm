@@ -1,0 +1,61 @@
+object frmLoading: TfrmLoading
+  Left = 1007
+  Height = 72
+  Top = 698
+  Width = 379
+  BorderIcons = []
+  BorderStyle = bsSingle
+  Caption = 'Loading...'
+  ClientHeight = 72
+  ClientWidth = 379
+  DesignTimePPI = 120
+  OnClose = FormClose
+  OnCreate = FormCreate
+  ParentFont = True
+  Position = poScreenCenter
+  LCLVersion = '2.0.10.0'
+  object lblLoadingInfo: TLabel
+    Left = 10
+    Height = 22
+    Top = 10
+    Width = 360
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Downloading data from server'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+  object lblLoadingStatusCfg: TLabel
+    Left = 10
+    Height = 24
+    Top = 40
+    Width = 360
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Please wait...'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clNavy
+    Font.Height = -15
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+  object tmrClose: TTimer
+    Enabled = False
+    OnTimer = tmrCloseTimer
+    Left = 329
+    Top = 10
+  end
+end
