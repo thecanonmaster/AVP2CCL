@@ -109,7 +109,7 @@ begin
 
     SL := TStringList.Create;
     SplitRegExpr(';', strData, SL);
-    g_nOnlineIndexData := StrToInt(SL.Strings[SL.Count - 1]);
+    g_nOnlineIndexData := StrToInt(SL.Strings[SL.Count - 1]) + g_nDefaultOnlineData;
     SL.Free;
 
     LoadUpdateInfo;
@@ -187,7 +187,7 @@ begin
     ExtractFileList.Add(ONLINE_SCRIPT_FILENAME);
 
     DataLoader := TDownloadFileThread.Create;
-    for i := 0 to MAX_ONLINE_MIRRORS - 1 do
+    for i := g_nDefaultOnlineData to MAX_ONLINE_MIRRORS - 1 do
     begin
       if g_astrOnlineData[i] <> '' then
         DataLoader.URLs.Add(g_astrOnlineData[i]);

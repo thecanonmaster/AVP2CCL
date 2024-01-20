@@ -44,6 +44,7 @@ const
   INI_MS_ADDRESS = 'Address';
   INI_MS_TIMEOUT = 'Timeout';
   INI_ONLINE = 'Online';
+  INI_DEFAULT_DATA = 'DefaultData';
   INI_DATA = 'Data';
   INI_COLUMN = 'ColumnSetup';
   INI_CS_SERVER = 'ServerName';
@@ -176,7 +177,7 @@ type
 
 var
   g_strLauncherVersion: string = '0.0.4.0';
-  g_strLauncherRC: string = 'RC03';
+  g_strLauncherRC: string = '';
   g_slTranslateStrings: TStringList;
   g_strLang: string;
   g_Logger: TEventLogEx;
@@ -195,6 +196,7 @@ var
   g_strLocalTCPPort: string;
   g_nUDPTimeout: Integer;
   g_nTCPTimeout: Integer;
+  g_nDefaultOnlineData: Integer = 0;
   g_astrOnlineData: array[0..MAX_ONLINE_MIRRORS - 1] of string;
   g_nOnlineIndexData: Integer = 0;
   g_strGameDir: string;
@@ -501,6 +503,8 @@ begin
   g_bLogUDP := g_NUConfigIni.ReadBool(INI_MAIN, INI_LOGUDP, False);
   g_Logger.Level := g_NUConfigIni.ReadInteger(INI_MAIN, INI_LOGLEVEL, 0);
   g_bOfflineMode := g_NUConfigIni.ReadBool(INI_MAIN, INI_OFFLINE, False);
+  g_nDefaultOnlineData := g_NUConfigIni.ReadInt64(INI_ONLINE, INI_DEFAULT_DATA, 0);
+
   for i := 0 to MAX_ONLINE_MIRRORS - 1 do
     g_astrOnlineData[i] := g_NUConfigIni.ReadString(INI_ONLINE, INI_DATA + IntToStr(i), '');
 
@@ -765,6 +769,9 @@ begin
   DeleteDirectory(g_strAppDir + 'sounds\', False);
   DeleteDirectory(g_strAppDir + 'images\', False);
   DeleteDirectory(g_strAppDir + 'lang\', False);
+  DeleteFile(g_strDataDir + 'ltmsg.dll');
+  DeleteFile(g_strDataDir + 'ltmsg.ini');
+  DeleteFile(g_strDataDir + 'ltmsg.original');
   DeleteFile(g_strAppDir + 'RezMgrLW.dll');
   DeleteFile(g_strAppDir + 'Updater.exe');
   DeleteFile(g_strAppDir + 'Updater.log');

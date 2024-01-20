@@ -13,7 +13,7 @@ object frmLoading: TfrmLoading
   OnCreate = FormCreate
   ParentFont = True
   Position = poScreenCenter
-  LCLVersion = '2.0.10.0'
+  LCLVersion = '3.0.0.3'
   object lblLoadingInfo: TLabel
     Left = 10
     Height = 22
